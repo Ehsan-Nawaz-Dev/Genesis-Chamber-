@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 47% 92%;
+    --foreground: 180 37% 16%;
+
+    --card: 39 47% 96%;
+    --card-foreground: 180 37% 16%;
+
+    --popover: 39 47% 96%;
+    --popover-foreground: 180 37% 16%;
+
+    --primary: 180 37% 16%;
+    --primary-foreground: 39 47% 92%;
+
+    --secondary: 42 75% 55%;
+    --secondary-foreground: 180 37% 16%;
+
+    --muted: 39 30% 85%;
+    --muted-foreground: 180 20% 35%;
+
+    --accent: 42 75% 55%;
+    --accent-foreground: 180 37% 16%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 180 20% 75%;
+    --input: 180 20% 75%;
+    --ring: 42 75% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom Genesis Chamber Colors */
+    --genesis-teal: 180 37% 16%;
+    --genesis-gold: 42 75% 55%;
+    --genesis-cream: 39 47% 92%;
+    --genesis-forest: 160 30% 25%;
+    --genesis-light-gold: 42 80% 70%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(180 37% 16%) 0%, hsl(160 30% 25%) 50%, hsl(180 37% 20%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 75% 55%) 0%, hsl(42 80% 65%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(39 47% 96%) 0%, hsl(39 40% 94%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(42 75% 55% / 0.3) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(180 37% 16% / 0.08);
+    --shadow-elevated: 0 8px 40px hsl(180 37% 16% / 0.12);
+    --shadow-glow: 0 0 60px hsl(42 75% 55% / 0.3);
+    --shadow-card: 0 2px 20px hsl(180 37% 16% / 0.06);
+
+    /* Animation timings */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 180 37% 10%;
+    --foreground: 39 47% 92%;
+
+    --card: 180 37% 14%;
+    --card-foreground: 39 47% 92%;
+
+    --popover: 180 37% 14%;
+    --popover-foreground: 39 47% 92%;
+
+    --primary: 42 75% 55%;
+    --primary-foreground: 180 37% 10%;
+
+    --secondary: 180 30% 20%;
+    --secondary-foreground: 39 47% 92%;
+
+    --muted: 180 25% 18%;
+    --muted-foreground: 39 30% 70%;
+
+    --accent: 42 75% 55%;
+    --accent-foreground: 180 37% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 180 25% 25%;
+    --input: 180 25% 25%;
+    --ring: 42 75% 55%;
+
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 8px 40px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 60px hsl(42 75% 55% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .genesis-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--genesis-gold)) 0%, hsl(var(--genesis-light-gold)) 100%);
+  }
+
+  .genesis-card {
+    @apply bg-card rounded-xl border border-border/50;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .genesis-card:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+  }
+
+  .genesis-button-primary {
+    @apply inline-flex items-center justify-center rounded-lg px-8 py-4 font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--genesis-gold)) 0%, hsl(var(--genesis-light-gold)) 100%);
+    color: hsl(var(--genesis-teal));
+    box-shadow: 0 4px 20px hsl(var(--genesis-gold) / 0.3);
+  }
+
+  .genesis-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px hsl(var(--genesis-gold) / 0.4);
+  }
+
+  .genesis-button-secondary {
+    @apply inline-flex items-center justify-center rounded-lg px-8 py-4 font-semibold border-2 transition-all duration-300;
+    border-color: hsl(var(--genesis-gold));
+    color: hsl(var(--genesis-gold));
+    background: transparent;
+  }
+
+  .genesis-button-secondary:hover {
+    background: hsl(var(--genesis-gold) / 0.1);
+    transform: translateY(-2px);
+  }
+
+  .genesis-glow {
+    position: relative;
+  }
+
+  .genesis-glow::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: var(--gradient-glow);
+    filter: blur(40px);
+    opacity: 0.5;
+    z-index: -1;
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  .genesis-section {
+    @apply py-20 md:py-32;
+  }
+
+  .genesis-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  .genesis-subheading {
+    @apply text-xl md:text-2xl text-muted-foreground max-w-3xl;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, hsl(var(--genesis-gold)), hsl(var(--genesis-teal)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--genesis-gold) / 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(var(--genesis-gold) / 0.5);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--genesis-teal));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--genesis-gold));
+}
