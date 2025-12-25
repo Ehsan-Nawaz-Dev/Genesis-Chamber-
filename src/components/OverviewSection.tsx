@@ -19,12 +19,12 @@ const OverviewSection = () => {
         >
           <span className="text-genesis-gold font-medium mb-4 block">System Overview</span>
           <h2 className="genesis-heading mb-6">
-            Complete Biological
-            <span className="block genesis-gradient-text">Repair Environment</span>
+            Phase-Based Modular
+            <span className="block genesis-gradient-text">Biological Platform</span>
           </h2>
           <p className="genesis-subheading mx-auto">
-            The Genesis Chamber™ combines eleven integrated therapeutic subsystems
-            to create the most comprehensive wellness technology ever developed.
+            Genesis Chamber™ is built as a platform of 14+ integrated biological modules that work
+            together across four structured phases, rather than a single one-off therapy room.
           </p>
         </motion.div>
 
@@ -62,7 +62,7 @@ const OverviewSection = () => {
             >
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-lg bg-genesis-gold/10 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-genesis-gold">11</span>
+                  <span className="text-2xl font-bold text-genesis-gold">14+</span>
                 </div>
                 <div>
                   <p className="font-bold text-foreground">Subsystems</p>
@@ -80,27 +80,31 @@ const OverviewSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-3xl font-bold text-foreground mb-6 font-serif">
-              Multimodal Therapeutic Integration
+              What the Genesis Chamber™ Actually Is
             </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              The Genesis Chamber™ represents a paradigm shift in therapeutic technology.
-              By integrating photobiomodulation, thermal cycling, atmospheric control,
-              frequency entrainment, and real-time biometric feedback, we've created
-              an environment that addresses healing at multiple biological levels simultaneously.
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              Genesis Chamber™ is an integrated biological system. It is built as a platform of
+              coordinated modules and phases that shape light, sound, temperature, atmosphere,
+              vibration and environmental chemistry around the human body.
+            </p>
+            <p className="text-muted-foreground mb-4 leading-relaxed font-semibold">
+              It is <span className="underline decoration-genesis-gold/70 decoration-2 underline-offset-4">not</span> a single device.
+              It is <span className="underline decoration-genesis-gold/70 decoration-2 underline-offset-4">not</span> a spa room.
+              It is <span className="underline decoration-genesis-gold/70 decoration-2 underline-offset-4">not</span> one therapy.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Each session is personalized through AI-powered optimization, adjusting
-              parameters in real-time based on your body's unique response. This ensures
-              maximum therapeutic benefit while maintaining complete safety.
+              Instead of switching one machine on and off, Genesis runs as four predictable phases –
+              from priming to consolidation – so the nervous system, immune system and cellular
+              machinery are signalled in a planned sequence rather than shocked with random input.
             </p>
 
             {/* Feature List */}
             <div className="space-y-4 mb-8">
               {[
-                'Cellular-level repair and regeneration',
-                'Real-time biometric monitoring',
-                'AI-optimized therapy sequences',
-                'Complete EMF-shielded environment',
+                'Phase-based architecture instead of single on/off sessions',
+                '14+ named modules including Salt Serenity™ and Forest Immersion™',
+                'Designed biometric and software layer for adaptive control',
+                'Fully EMF-shielded, controllable internal environment',
               ].map((feature, index) => (
                 <motion.div
                   key={index}
